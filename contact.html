@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Vash Glow Dermaceuticals</title>
+<meta name="description" content="Contact Vash Glow Dermaceuticals — Instagram, Facebook and Quetta location.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <span class="dot"></span>
+      <div>VASH GLOW<small>Dermaceuticals</small></div>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
+  </div>
+</header>
+
+<section class="page-header wrap">
+  <div class="eyebrow">Get In Touch</div>
+  <h1>Order, ask, or just say hello.</h1>
+  <p>Vash Glow Dermaceuticals takes orders directly on WhatsApp, and is also reachable through Instagram and Facebook. Message us to order, ask about a product, or find the right routine for your skin.</p>
+</section>
+
+<section class="contact-grid wrap">
+  <div class="contact-card reveal">
+    <div class="eyebrow">WhatsApp</div>
+    <h3>+92 331 7070775</h3>
+    <p>Fastest way to order — send your product choice, quantity and delivery address for Cash on Delivery.</p>
+    <a class="btn btn-primary" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
+  </div>
+  <div class="contact-card reveal">
+    <div class="eyebrow">Instagram</div>
+    <h3>@vashglowofficial</h3>
+    <p>Our most active channel — DM us for orders, product questions, or skin concern recommendations.</p>
+    <a class="btn btn-primary" href="https://www.instagram.com/vashglowofficial" target="_blank" rel="noopener">Message on Instagram →</a>
+  </div>
+  <div class="contact-card reveal">
+    <div class="eyebrow">Facebook</div>
+    <h3>Vashglow Dermaceuticals</h3>
+    <p>Follow for product updates, offers and skincare tips from the Vash Glow team.</p>
+    <a class="btn btn-outline" href="https://www.facebook.com/vashglowofficial" target="_blank" rel="noopener">Visit Facebook Page →</a>
+  </div>
+  <div class="contact-card reveal">
+    <div class="eyebrow">Location</div>
+    <h3>Quetta, Pakistan</h3>
+    <p>Vash Glow Dermaceuticals is based and formulated in Quetta, serving customers across Pakistan.</p>
+  </div>
+  <div class="contact-card reveal">
+    <div class="eyebrow">Shop</div>
+    <h3>Browse the full lineup</h3>
+    <p>See all six products with prices, actives and how to use them before you message us.</p>
+    <a class="btn btn-outline" href="shop.html">Go to Shop →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h2>Ready for<br>your daily glow?</h2>
+      <p>Message us on Instagram to order, ask about a product, or find the right routine for your skin.</p>
+      <div class="hero-actions" style="margin-top:24px;">
+        <a class="btn btn-primary" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener" style="background:var(--gold);">Order on WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Find Us</h4>
+      <a href="https://www.instagram.com/vashglowofficial" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/vashglowofficial" target="_blank" rel="noopener">Facebook</a>
+      <div>Quetta, Pakistan</div>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="shop.html">Shop All Products</a>
+      <a href="about.html">About Vash Glow</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Vash Glow Dermaceuticals</span>
+    <span>Formulation Sheet No. VG-004</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

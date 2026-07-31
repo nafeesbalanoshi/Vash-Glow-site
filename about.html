@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Vash Glow Dermaceuticals</title>
+<meta name="description" content="Vash Glow Dermaceuticals is a Quetta-based skincare brand formulating brightening, sun defense, acne and hair care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <span class="dot"></span>
+      <div>VASH GLOW<small>Dermaceuticals</small></div>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
+  </div>
+</header>
+
+<section class="page-header wrap">
+  <div class="eyebrow">Our Story</div>
+  <h1>Skincare built for skin like ours.</h1>
+  <p>Vash Glow Dermaceuticals started in Quetta with a simple idea: brightening and acne care formulated around actives that are named on the box, not hidden behind a marketing word like "glow."</p>
+</section>
+
+<section class="story wrap">
+  <div class="reveal">
+    <h2>Why Vash Glow exists</h2>
+    <p>South Asian skin has its own set of common concerns — pigmentation, melasma, oiliness and acne that don't always get addressed by imported, generic skincare. Vash Glow formulates for those concerns specifically, using ingredients that are dermatologically tested and clearly listed.</p>
+    <p>Every product carries a batch number, manufacturing date and expiry date, the same way a pharmaceutical product would — because skincare that touches your face deserves that level of transparency.</p>
+    <h2 style="margin-top:32px;">How we formulate</h2>
+    <p>Each formula is built around a small number of well-studied actives — glutathione and vitamin C for brightening, alpha arbutin and niacinamide for tone, salicylic and mandelic acid for acne, biotin and procapil for hair fall — rather than long ingredient lists designed to look impressive.</p>
+  </div>
+  <div class="timeline reveal">
+    <div class="t-item">
+      <div class="k mono">ROUTINE / 01</div>
+      <h4>Brighten</h4>
+      <p>Skin Brightening Cream + Advanced Brightening Face Wash target pigmentation and uneven tone.</p>
+    </div>
+    <div class="t-item">
+      <div class="k mono">ROUTINE / 02</div>
+      <h4>Defend</h4>
+      <p>Sun Defense Cream (SPF 60 PA++++) protects the results of the brightening routine daily.</p>
+    </div>
+    <div class="t-item">
+      <div class="k mono">ROUTINE / 03</div>
+      <h4>Clear</h4>
+      <p>The Seboteen Acne Care Bundle treats acne-prone, oily skin without over-drying it.</p>
+    </div>
+    <div class="t-item">
+      <div class="k mono">ROUTINE / 04</div>
+      <h4>Strengthen</h4>
+      <p>Hair Armor Plus Shampoo extends the same formulation philosophy to hair fall and dandruff.</p>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Where We're Based</div>
+      <h2 class="display" style="font-size:clamp(26px,3.6vw,36px);margin-top:14px;letter-spacing:-.01em;">Quetta, Pakistan.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <div class="n mono">01</div>
+        <p>Formulated and marketed from Quetta, for the Pakistani market first.</p>
+      </div>
+      <div class="trust-item reveal">
+        <div class="n mono">02</div>
+        <p>Sold directly through our Instagram and Facebook pages — @vashglowofficial.</p>
+      </div>
+      <div class="trust-item reveal">
+        <div class="n mono">03</div>
+        <p>Dermatologically tested, professional care positioned for everybody.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Ready for<br>your daily glow?</h2>
+      <p>Message us on Instagram to order, ask about a product, or find the right routine for your skin.</p>
+      <div class="hero-actions" style="margin-top:24px;">
+        <a class="btn btn-primary" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener" style="background:var(--gold);">Order on WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Find Us</h4>
+      <a href="https://www.instagram.com/vashglowofficial" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/vashglowofficial" target="_blank" rel="noopener">Facebook</a>
+      <div>Quetta, Pakistan</div>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="shop.html">Shop All Products</a>
+      <a href="about.html">About Vash Glow</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Vash Glow Dermaceuticals</span>
+    <span>Formulation Sheet No. VG-004</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
