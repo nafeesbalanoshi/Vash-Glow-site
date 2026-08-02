@@ -419,3 +419,36 @@ footer p{color:#B9B4A6;font-size:14px;margin-top:16px;line-height:1.65;max-width
 .article-cta{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);padding:24px 26px;margin:36px 0;}
 .article-cta p{margin-bottom:14px;color:var(--ink);}
 @media (max-width:720px){ .blog-grid{grid-template-columns:1fr;} }
+
+/* ---------- best sellers slider ---------- */
+.bestsellers{padding:80px 0;border-top:1px solid var(--line);}
+.bs-track{
+  display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:14px;-webkit-overflow-scrolling:touch;
+}
+.bs-track::-webkit-scrollbar{height:6px;}
+.bs-track::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:4px;}
+.bs-card{
+  flex:0 0 240px;scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);
+  padding:18px;transition:border-color .2s ease, transform .2s ease;text-decoration:none;color:inherit;
+}
+.bs-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.bs-card img{width:100%;aspect-ratio:1/1;object-fit:cover;margin-bottom:14px;}
+.bs-card h4{font-family:'Playfair Display',serif;font-size:15.5px;line-height:1.35;margin-bottom:8px;min-height:41px;}
+.bs-card .bs-price{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--gold-deep);}
+.bs-card .bs-price.tbd{color:var(--ink-soft);font-size:11.5px;font-weight:500;}
+.bs-hint{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:14px;font-family:'Poppins',sans-serif;}
+
+/* ---------- instagram gallery ---------- */
+.insta{padding:80px 0;border-top:1px solid var(--line);}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;}
+.insta-tile{position:relative;aspect-ratio:1/1;overflow:hidden;display:block;}
+.insta-tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.insta-tile:hover img{transform:scale(1.08);}
+.insta-tile::after{
+  content:"📷 View Post";position:absolute;inset:0;background:rgba(11,11,11,.55);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Poppins',sans-serif;font-size:12px;font-weight:500;opacity:0;transition:opacity .25s ease;
+}
+.insta-tile:hover::after{opacity:1;}
+@media (max-width:860px){ .insta-grid{grid-template-columns:repeat(3,1fr);} }
