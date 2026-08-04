@@ -23,14 +23,16 @@
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
+    <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20the%20BB%20Cream%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
   </div>
 </header>
 
 <section class="wrap pd-hero">
   <div>
     <div class="pd-gallery reveal">
-      <img src="images/bb-cream.jpg" alt="BB Cream">
+      <div class="pg-track"><div class="pg-slide"><img src="images/bb-cream.jpg" alt="BB Cream — SPF 50 PA+++ Skin Perfector"><span class="pg-caption">SPF 50 PA+++ Skin Perfector</span></div></div>
+      
+      <div class="pg-dots"><span class="pg-dot active"></span></div>
       <span class="pd-oos">Out of Stock</span>
     </div>
   </div>
@@ -42,7 +44,9 @@
     <div class="pd-meta">SPF 50 PA+++ · For All Skin Types</div>
     <p class="pd-summary">Evens skin tone, hides blemishes and protects from UVA/UVB — natural, flawless daily coverage.</p>
     <div class="pd-actives"><span class="pill">SPF 50 PA+++</span></div>
-    <div class="pd-cta"><a class="btn btn-outline" style="opacity:.6;pointer-events:none;">Currently Out of Stock</a></div>
+    <div class="trust-badges"><span class="trust-badge"><span class="c">✔</span> Dermatologically Tested</span><span class="trust-badge"><span class="c">✔</span> Non-Comedogenic</span><span class="trust-badge"><span class="c">✔</span> For All Skin Types</span></div>
+    
+    <div class="pd-cta"><span class="btn btn-outline" style="opacity:.6;">Currently Out of Stock</span><button class="share-btn" type="button" style="">↗ Share</button></div>
   </div>
 </section>
 
@@ -53,15 +57,16 @@
   </div>
   <div class="pd-block reveal">
     <h2>Benefits</h2>
-    <ul><li>Natural coverage</li><li>Brightening</li><li>Hydrating</li><li>Long lasting</li></ul>
+    <div class="icon-grid"><div class="icon-tile"><span class="ic">✨</span><span>Natural coverage</span></div><div class="icon-tile"><span class="ic">✔️</span><span>Brightening</span></div><div class="icon-tile"><span class="ic">✔️</span><span>Hydrating</span></div><div class="icon-tile"><span class="ic">⏱️</span><span>Long lasting</span></div></div>
   </div>
   <div class="pd-block reveal">
-    <h2>Ingredients</h2>
-    <p>SPF 50 PA+++ sun protection complex with hydrating and skin-perfecting agents.</p>
+    <h2>Key Ingredients</h2>
+    <div class="icon-grid"><div class="icon-tile"><span class="ic">☀️</span><span>SPF 50 PA+++</span></div></div>
+    <p style="margin-top:16px;">SPF 50 PA+++ sun protection complex with hydrating and skin-perfecting agents.</p>
   </div>
   <div class="pd-block reveal">
-    <h2>Directions</h2>
-    <p>Apply a small amount evenly to face after your skincare routine. Blend outward for natural, long-lasting coverage.</p>
+    <h2>How to Use</h2>
+    <div class="steps-row"><div class="step-item"><div class="step-n">1</div><p>Apply after skincare routine</p></div><div class="step-arrow">→</div><div class="step-item"><div class="step-n">2</div><p>Blend outward evenly</p></div><div class="step-arrow">→</div><div class="step-item"><div class="step-n">3</div><p>Reapply as needed through the day</p></div></div>
   </div>
   <div class="pd-block reveal">
     <h2>Warnings</h2>
@@ -93,7 +98,7 @@
         <div class="foot"><span class="price">Rs. 1,150</span></div>
       </a>
       <a class="card reveal" href="product-brightening-cream.html" style="text-decoration:none;">
-        <img class="thumb" src="images/brightening-cream.jpg" alt="Skin Brightening Cream">
+        <img class="thumb" src="images/bc-gallery-hero.jpg" alt="Skin Brightening Cream">
         <span class="idx">01 / BRIGHTENING</span>
         <h3>Skin Brightening Cream</h3>
         <div class="foot"><span class="price">Rs. 1,450</span></div>
@@ -122,6 +127,8 @@
       <a href="shop.html">Shop All Products</a>
       <a href="about.html">About Vash Glow</a>
       <a href="blog.html">Blog</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="faqs.html">FAQs</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -130,13 +137,7 @@
     <span>Formulation Sheet No. VG-004</span>
   </div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
-
+<a class="sticky-wa" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20the%20BB%20Cream%20from%20Vash%20Glow." target="_blank" rel="noopener">🟢<span class="wa-text">&nbsp;WhatsApp Order</span></a>
+<script src="js/site.js"></script>
 </body>
 </html>

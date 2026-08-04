@@ -23,14 +23,16 @@
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
+    <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Seboteen%20Acne%20Care%20Bundle%20from%20Vash%20Glow." target="_blank" rel="noopener">Order on WhatsApp →</a>
   </div>
 </header>
 
 <section class="wrap pd-hero">
   <div>
     <div class="pd-gallery reveal">
-      <img src="images/seboteen-bundle.jpg" alt="Seboteen Acne Care Bundle">
+      <div class="pg-track"><div class="pg-slide"><img src="images/seboteen-bundle.jpg" alt="Seboteen Acne Care Bundle — Acne Control Cream + Purifying Face Wash"><span class="pg-caption">Acne Control Cream + Purifying Face Wash</span></div></div>
+      
+      <div class="pg-dots"><span class="pg-dot active"></span></div>
       <span class="pd-oos">Out of Stock</span>
     </div>
   </div>
@@ -42,7 +44,9 @@
     <div class="pd-meta">2-Piece Bundle · Acne Control Cream + Purifying Face Wash</div>
     <p class="pd-summary">Acne Control Cream + Anti-Acne Purifying Face Wash, formulated together for acne-prone & oily skin.</p>
     <div class="pd-actives"><span class="pill">Salicylic Acid</span><span class="pill">Mandelic Acid</span></div>
-    <div class="pd-cta"><a class="btn btn-outline" style="opacity:.6;pointer-events:none;">Currently Out of Stock</a></div>
+    <div class="trust-badges"><span class="trust-badge"><span class="c">✔</span> Dermatologically Tested</span><span class="trust-badge"><span class="c">✔</span> Non-Comedogenic</span><span class="trust-badge"><span class="c">✔</span> Paraben Free</span><span class="trust-badge"><span class="c">✔</span> Sulfate Free</span></div>
+    
+    <div class="pd-cta"><span class="btn btn-outline" style="opacity:.6;">Currently Out of Stock</span><button class="share-btn" type="button" style="">↗ Share</button></div>
   </div>
 </section>
 
@@ -53,15 +57,16 @@
   </div>
   <div class="pd-block reveal">
     <h2>Benefits</h2>
-    <ul><li>Fights active acne & breakouts</li><li>Reduces redness & inflammation</li><li>Controls oil & shine</li><li>Soothes & calms skin</li></ul>
+    <div class="icon-grid"><div class="icon-tile"><span class="ic">🎯</span><span>Fights active acne & breakouts</span></div><div class="icon-tile"><span class="ic">🍃</span><span>Reduces redness & inflammation</span></div><div class="icon-tile"><span class="ic">💧</span><span>Controls oil & shine</span></div><div class="icon-tile"><span class="ic">🍃</span><span>Soothes & calms skin</span></div></div>
   </div>
   <div class="pd-block reveal">
-    <h2>Ingredients</h2>
-    <p>Salicylic Acid, Mandelic Acid, and a paraben-free, sulfate-free, non-comedogenic base.</p>
+    <h2>Key Ingredients</h2>
+    <div class="icon-grid"><div class="icon-tile"><span class="ic">🧪</span><span>Salicylic Acid</span></div><div class="icon-tile"><span class="ic">🧪</span><span>Mandelic Acid</span></div></div>
+    <p style="margin-top:16px;">Salicylic Acid, Mandelic Acid, and a paraben-free, sulfate-free, non-comedogenic base.</p>
   </div>
   <div class="pd-block reveal">
-    <h2>Directions</h2>
-    <p>Cleanse with the Purifying Face Wash morning and evening, then apply the Acne Control Cream to affected areas. Safe for daily use.</p>
+    <h2>How to Use</h2>
+    <div class="steps-row"><div class="step-item"><div class="step-n">1</div><p>Cleanse with Purifying Face Wash</p></div><div class="step-arrow">→</div><div class="step-item"><div class="step-n">2</div><p>Apply Control Cream to breakouts</p></div><div class="step-arrow">→</div><div class="step-item"><div class="step-n">3</div><p>Use morning and evening</p></div></div>
   </div>
   <div class="pd-block reveal">
     <h2>Warnings</h2>
@@ -93,7 +98,7 @@
         <div class="foot"><span class="price">Rs. 1,250</span></div>
       </a>
       <a class="card reveal" href="product-brightening-cream.html" style="text-decoration:none;">
-        <img class="thumb" src="images/brightening-cream.jpg" alt="Skin Brightening Cream">
+        <img class="thumb" src="images/bc-gallery-hero.jpg" alt="Skin Brightening Cream">
         <span class="idx">01 / BRIGHTENING</span>
         <h3>Skin Brightening Cream</h3>
         <div class="foot"><span class="price">Rs. 1,450</span></div>
@@ -122,6 +127,8 @@
       <a href="shop.html">Shop All Products</a>
       <a href="about.html">About Vash Glow</a>
       <a href="blog.html">Blog</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="faqs.html">FAQs</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -130,13 +137,7 @@
     <span>Formulation Sheet No. VG-004</span>
   </div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
-
+<a class="sticky-wa" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Seboteen%20Acne%20Care%20Bundle%20from%20Vash%20Glow." target="_blank" rel="noopener">🟢<span class="wa-text">&nbsp;WhatsApp Order</span></a>
+<script src="js/site.js"></script>
 </body>
 </html>

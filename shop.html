@@ -35,7 +35,14 @@
 
 <section class="products no-border-top">
   <div class="wrap">
-    <div class="detail-row reveal">
+    <div class="filter-bar reveal">
+      <button class="filter-chip active" data-filter="all">All Products</button>
+      <button class="filter-chip" data-filter="brightening">Brightening</button>
+      <button class="filter-chip" data-filter="sun">Sun Care</button>
+      <button class="filter-chip" data-filter="acne">Acne</button>
+      <button class="filter-chip" data-filter="hair">Hair Care</button>
+    </div>
+    <div class="detail-row reveal" data-category="brightening">
       <div class="detail-plate">
         <a href="product-brightening-cream.html"><img class="thumb" src="images/brightening-cream.jpg" alt="01 / BRIGHTENING" onerror="this.style.display='none'"></a>
         <div class="idx">01 / BRIGHTENING</div>
@@ -57,7 +64,7 @@
       </div>
     </div>
 
-    <div class="detail-row reveal">
+    <div class="detail-row reveal" data-category="brightening">
       <div class="detail-plate">
         <a href="product-face-wash.html"><img class="thumb" src="images/face-wash.jpg" alt="02 / CLEANSE" onerror="this.style.display='none'"></a>
         <div class="idx">02 / CLEANSE</div>
@@ -79,7 +86,7 @@
       </div>
     </div>
 
-    <div class="detail-row reveal">
+    <div class="detail-row reveal" data-category="sun">
       <div class="detail-plate">
         <a href="product-sun-defense.html"><img class="thumb" src="images/sun-defense.jpg" alt="03 / DEFENSE" onerror="this.style.display='none'"></a>
         <div class="idx">03 / DEFENSE</div>
@@ -101,7 +108,7 @@
       </div>
     </div>
 
-    <div class="detail-row reveal">
+    <div class="detail-row reveal" data-category="acne">
       <div class="detail-plate">
         <div class="thumb-wrap"><a href="product-seboteen.html"><img class="thumb" src="images/seboteen-bundle.jpg" alt="04 / CLARITY" onerror="this.style.display='none'"><span class="oos-badge">Out of Stock</span></a></div>
         <div class="idx">04 / CLARITY</div>
@@ -123,7 +130,7 @@
       </div>
     </div>
 
-    <div class="detail-row reveal">
+    <div class="detail-row reveal" data-category="hair">
       <div class="detail-plate">
         <a href="product-hair-armor.html"><img class="thumb" src="images/hair-armor.jpg" alt="05 / HAIR CARE" onerror="this.style.display='none'"></a>
         <div class="idx">05 / HAIR CARE</div>
@@ -145,7 +152,7 @@
       </div>
     </div>
 
-    <div class="detail-row reveal">
+    <div class="detail-row reveal" data-category="sun">
       <div class="detail-plate">
         <div class="thumb-wrap"><a href="product-bb-cream.html"><img class="thumb" src="images/bb-cream.jpg" alt="06 / PERFECTOR" onerror="this.style.display='none'"><span class="oos-badge">Out of Stock</span></a></div>
         <div class="idx">06 / PERFECTOR</div>
@@ -200,6 +207,8 @@
       <a href="shop.html">Shop All Products</a>
       <a href="about.html">About Vash Glow</a>
       <a href="blog.html">Blog</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="faqs.html">FAQs</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -216,5 +225,7 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 
+<a class="sticky-wa" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." target="_blank" rel="noopener">🟢<span class="wa-text">&nbsp;WhatsApp Order</span></a>
+<script src="js/site.js"></script>
 </body>
 </html>

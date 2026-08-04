@@ -442,3 +442,98 @@ footer p{color:#B9B4A6;font-size:14px;margin-top:16px;line-height:1.65;max-width
 .bs-card .bs-price.tbd{color:var(--ink-soft);font-size:11px;font-weight:500;}
 .bs-hint{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:20px;font-family:'Poppins',sans-serif;}
 @media (prefers-reduced-motion: reduce){ .bs-track{animation:none;overflow-x:auto;} }
+
+/* ---------- sticky WhatsApp button (site-wide) ---------- */
+.sticky-wa{
+  position:fixed;bottom:22px;right:22px;z-index:80;
+  background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 10px 30px -8px rgba(0,0,0,.4);
+  transition:transform .2s ease;
+}
+.sticky-wa:hover{transform:scale(1.08);}
+@media (min-width:860px){
+  .sticky-wa{width:auto;height:auto;border-radius:30px;padding:14px 22px;font-size:14px;gap:9px;display:flex;font-family:'Poppins',sans-serif;font-weight:500;}
+}
+.sticky-wa .wa-text{display:none;}
+@media (min-width:860px){ .sticky-wa .wa-text{display:inline;} }
+
+/* ---------- header shrink on scroll ---------- */
+header.shrink .nav{padding:10px 0;}
+header.shrink .logo img{height:26px;}
+header{transition:padding .2s ease;}
+
+/* ---------- product gallery slider ---------- */
+.pd-gallery{padding:0;border:1px solid var(--line);background:var(--paper);position:relative;overflow:hidden;}
+.pg-track{display:flex;transition:transform .4s ease;}
+.pg-slide{flex:0 0 100%;position:relative;}
+.pg-slide img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
+.pg-slide .pg-caption{
+  position:absolute;left:20px;bottom:18px;background:rgba(11,11,11,.65);color:#fff;
+  font-family:'Poppins',sans-serif;font-size:11px;padding:6px 12px;letter-spacing:.03em;
+}
+.pg-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.9);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;color:var(--ink);z-index:5;
+}
+.pg-arrow.prev{left:14px;} .pg-arrow.next{right:14px;}
+.pg-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px;z-index:5;}
+.pg-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.15);cursor:pointer;}
+.pg-dot.active{background:var(--gold);}
+
+/* ---------- icon grids: benefits / ingredients / how-to-use ---------- */
+.icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.icon-tile{
+  background:var(--cream);border:1px solid var(--line);padding:18px 12px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.icon-tile .ic{font-size:22px;}
+.icon-tile span{font-size:12px;color:var(--ink-soft);font-weight:500;line-height:1.4;}
+@media (max-width:600px){ .icon-grid{grid-template-columns:repeat(2,1fr);} }
+
+.steps-row{display:flex;align-items:flex-start;gap:10px;justify-content:space-between;}
+.step-item{flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.step-item .step-n{
+  width:40px;height:40px;border-radius:50%;background:var(--black);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;
+}
+.step-item p{font-size:12.5px;color:var(--ink-soft);line-height:1.5;max-width:16ch;}
+.step-arrow{align-self:center;color:var(--gold);font-size:18px;margin-top:8px;}
+@media (max-width:600px){ .steps-row{flex-direction:column;} .step-arrow{transform:rotate(90deg);align-self:flex-start;margin-left:19px;} }
+
+/* trust badges row */
+.trust-badges{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0;}
+.trust-badge{
+  font-family:'Poppins',sans-serif;font-size:11.5px;color:var(--ink-soft);
+  border:1px solid var(--line);padding:7px 13px;display:flex;align-items:center;gap:6px;
+}
+.trust-badge .c{color:var(--gold-deep);}
+
+/* quantity stepper + share */
+.qty-row{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.qty-stepper{display:flex;align-items:center;border:1px solid var(--line);}
+.qty-stepper button{width:38px;height:38px;background:none;border:none;font-size:16px;cursor:pointer;color:var(--ink);}
+.qty-stepper button:hover{background:var(--cream);}
+.qty-stepper span{width:36px;text-align:center;font-family:'Poppins',sans-serif;font-size:14px;}
+.share-btn{
+  background:none;border:1px solid var(--line);padding:11px 16px;font-family:'Poppins',sans-serif;font-size:12.5px;
+  cursor:pointer;color:var(--ink-soft);display:flex;align-items:center;gap:7px;
+}
+.share-btn:hover{border-color:var(--gold);color:var(--gold-deep);}
+
+/* mobile: enforce min 44px tap targets and 16px base text on small screens */
+@media (max-width:600px){
+  .btn{min-height:44px;}
+  .nav-cta{min-height:38px;}
+  body{font-size:16px;}
+  .pd-summary{font-size:16px;}
+}
+
+/* shop filter bar */
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.filter-chip{
+  font-family:'Poppins',sans-serif;font-size:12.5px;padding:9px 18px;border:1px solid var(--line);
+  cursor:pointer;color:var(--ink-soft);background:var(--paper);transition:all .2s ease;
+}
+.filter-chip.active, .filter-chip:hover{border-color:var(--gold);color:var(--gold-deep);background:var(--cream);}
