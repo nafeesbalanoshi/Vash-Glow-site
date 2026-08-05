@@ -1,9 +1,15 @@
 // Header shrink on scroll
 window.addEventListener('scroll', function(){
   const h = document.querySelector('header');
-  if(!h) return;
-  if(window.scrollY > 40) h.classList.add('shrink');
-  else h.classList.remove('shrink');
+  if(h){
+    if(window.scrollY > 40) h.classList.add('shrink');
+    else h.classList.remove('shrink');
+  }
+  const bt = document.querySelector('.back-top');
+  if(bt){
+    if(window.scrollY > 500) bt.classList.add('show');
+    else bt.classList.remove('show');
+  }
 });
 
 // Reveal on scroll (kept in case a page doesn't already have it)
