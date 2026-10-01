@@ -7,6 +7,7 @@
 <url><loc>https://vashglow.com/contact.html</loc><priority>0.5</priority></url>
 <url><loc>https://vashglow.com/faqs.html</loc><priority>0.4</priority></url>
 <url><loc>https://vashglow.com/privacy-policy.html</loc><priority>0.2</priority></url>
+<url><loc>https://vashglow.com/terms.html</loc><priority>0.2</priority></url>
 <url><loc>https://vashglow.com/product-brightening-cream.html</loc><priority>0.8</priority></url>
 <url><loc>https://vashglow.com/product-face-wash.html</loc><priority>0.8</priority></url>
 <url><loc>https://vashglow.com/product-sun-defense.html</loc><priority>0.8</priority></url>
@@ -14,6 +15,10 @@
 <url><loc>https://vashglow.com/product-seboteen-cream.html</loc><priority>0.7</priority></url>
 <url><loc>https://vashglow.com/product-seboteen-facewash.html</loc><priority>0.7</priority></url>
 <url><loc>https://vashglow.com/product-bb-cream.html</loc><priority>0.7</priority></url>
+<url><loc>https://vashglow.com/product-scaroren.html</loc><priority>0.6</priority></url>
+<url><loc>https://vashglow.com/product-glutafad-soap.html</loc><priority>0.6</priority></url>
+<url><loc>https://vashglow.com/product-glutafad-facewash.html</loc><priority>0.8</priority></url>
+<url><loc>https://vashglow.com/product-hydrovey.html</loc><priority>0.8</priority></url>
 <url><loc>https://vashglow.com/blog-pigmentation.html</loc><priority>0.6</priority></url>
 <url><loc>https://vashglow.com/blog-sun-protection.html</loc><priority>0.6</priority></url>
 <url><loc>https://vashglow.com/blog-acne-routine.html</loc><priority>0.6</priority></url>
