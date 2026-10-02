@@ -112,8 +112,6 @@ nav.links a.active::after{
 }
 
 .nav-cta:hover{background:var(--gold);color:var(--black);transform:translateY(-1px);box-shadow:0 8px 18px rgba(200,164,90,.22);}
-.menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:22px;cursor:pointer;}
-@media (max-width:860px){ nav.links{display:none;} .menu-btn{display:block;} }
 
 /* ---------- buttons (global, consistent) ---------- */
 .btn{
@@ -353,9 +351,6 @@ nav.links a.active::after{
 .pd-faq summary::after{content:"+";font-size:20px;color:var(--gold-deep);}
 .pd-faq details[open] summary::after{content:"–";}
 .pd-faq details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);line-height:1.75;}
-.pd-reviews{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-card);padding:36px 28px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.05);}
-.pd-reviews .stars{color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:10px;}
-.pd-reviews p{color:var(--ink-soft);font-size:14.5px;max-width:52ch;margin:0 auto 20px;}
 
 .pd-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
 .pd-related-grid .card{
@@ -487,8 +482,6 @@ nav.links a.active::after{
 .article p{font-size:17px;line-height:1.8;margin-bottom:18px;max-width:70ch;}
 .article ul{padding-left:22px;margin-bottom:18px;}
 .article ul li{font-size:17px;line-height:1.9;color:var(--ink-soft);max-width:70ch;}
-.article-cta{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-card);border-left:3px solid var(--gold);padding:26px 28px;margin:40px 0;box-shadow:0 10px 30px rgba(0,0,0,.05);}
-.article-cta p{margin-bottom:16px;color:var(--ink);}
 @media (max-width:720px){ .blog-grid{grid-template-columns:1fr;} }
 @media (max-width:600px){ .article{padding-left:16px;padding-right:16px;} .article p, .article ul li{font-size:16px;} }
 
@@ -539,8 +532,6 @@ footer p{color:#B9B4A6;font-size:14.5px;margin-top:16px;line-height:1.7;max-widt
 .wa-icon{stroke:none;width:1.05em;height:1.05em;vertical-align:-0.18em;}
 .arrow-icon{width:0.95em;height:0.95em;margin-left:.28em;}
 .text-dash{display:inline-block;}
-.card .thumb-wrap,.pd-hero .detail-plate img,.detail-plate img{aspect-ratio:4/3;}
-.card .thumb-wrap{height:auto;min-height:0;}
 
 
 /* Vash Glow — Premium Shop Grid v3 */
@@ -628,3 +619,74 @@ body.menu-open{overflow:hidden;}
 .article-faq details p{font-size:14px;margin-top:10px;}
 .new-badge{position:absolute;top:14px;right:14px;z-index:3;background:var(--black);color:#fff;border-radius:999px;padding:8px 15px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 6px 14px rgba(0,0,0,.14);}
 @media(max-width:620px){.article-product-card{flex-direction:column;align-items:flex-start;padding:22px;}.article-product-card .btn{width:100%;justify-content:center;}}
+
+
+/* ============================================================
+   V8 RESPONSIVE SAFETY + MOBILE/DESKTOP-MODE FIXES
+   ============================================================ */
+html, body { width:100%; max-width:100%; min-width:0; }
+header, section, footer { width:100%; max-width:100%; min-width:0; }
+.wrap { width:100%; min-width:0; }
+
+/* Product detail must stack on phones/tablets and touch devices, even
+   when a mobile browser is displaying the page in "Desktop site" mode. */
+@media (max-width:1024px), (hover:none) and (pointer:coarse) {
+  .pd-hero {
+    width:100%;
+    grid-template-columns:1fr;
+    gap:28px;
+    padding-top:38px;
+  }
+  .pd-hero > div, .pd-info, .pd-gallery { width:100%; min-width:0; }
+  .pd-gallery { max-width:100%; }
+  .pd-info { max-width:760px; }
+}
+
+/* Full-width touch layout. This prevents narrow desktop-style columns and
+   oversized blank areas on mobile browsers. */
+@media (hover:none) and (pointer:coarse) {
+  .hero-banner, .concerns, .products, .bestsellers, .page-header, footer {
+    width:100vw; max-width:100vw; margin-left:0; margin-right:0;
+  }
+  .hero-banner { min-height:520px; padding:92px 0 58px; background-position:center center; }
+  .hero-banner .wrap, .concerns .wrap, .products .wrap, .bestsellers .wrap,
+  .page-header .wrap, footer .wrap { width:100%; max-width:none; }
+  section { padding-top:58px; padding-bottom:58px; }
+  .concerns { padding-top:58px; padding-bottom:48px; }
+  .concern-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  .concern-tile { min-height:132px; padding:24px 12px; }
+  .products { padding-top:58px; padding-bottom:58px; }
+  .products .head { margin-bottom:28px; }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .shop-page .products .wrap { width:100%; max-width:none; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding-left:16px; padding-right:16px; }
+  .shop-page .products .wrap > .filter-bar { grid-column:1/-1; }
+  .detail-row { min-width:0; }
+  .article { width:100%; max-width:none; margin:0; padding:54px 20px 70px; }
+  .article p, .article ul li { max-width:70ch; }
+  .pd-hero { padding-left:20px; padding-right:20px; }
+  .pd-gallery { border-radius:18px; }
+  .pd-gallery .pg-slide img { width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; }
+  .pd-info h1 { font-size:clamp(30px,7vw,42px); }
+  .pd-summary { font-size:16px; }
+  .pd-cta { width:100%; }
+  .pd-cta .btn { width:100%; justify-content:center; }
+  .pd-sections { padding-left:20px; padding-right:20px; padding-bottom:64px; }
+  .pd-related-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+}
+
+@media (max-width:520px), (hover:none) and (pointer:coarse) and (max-width:520px) {
+  .grid, .shop-page .products .wrap, .pd-related-grid { grid-template-columns:1fr; }
+  .concern-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .card .thumb-wrap, .shop-page .products .detail-plate > a:first-child { aspect-ratio:4/3; }
+  .shop-page .products .detail-body { padding:0 16px 16px; }
+  .article-product-card { margin:32px 0; padding:20px; }
+}
+
+/* Ensure the drawer is always above the header and receives taps. */
+.mobile-menu { z-index:9999; isolation:isolate; }
+.mobile-menu-panel, .mobile-menu-backdrop { pointer-events:auto; }
+.mobile-menu:not(.is-open) .mobile-menu-panel,
+.mobile-menu:not(.is-open) .mobile-menu-backdrop { pointer-events:none; }
+@media (prefers-reduced-motion:reduce) {
+  .mobile-menu-panel, .mobile-menu-backdrop { transition:none; }
+}
