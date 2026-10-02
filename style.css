@@ -110,7 +110,7 @@ nav.links a.active::after{
   white-space:nowrap;transition:all .25s ease;display:inline-flex;align-items:center;gap:8px;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
-.nav-cta::before{content:"💬";font-size:14px;}
+
 .nav-cta:hover{background:var(--gold);color:var(--black);transform:translateY(-1px);box-shadow:0 8px 18px rgba(200,164,90,.22);}
 .menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:22px;cursor:pointer;}
 @media (max-width:860px){ nav.links{display:none;} .menu-btn{display:block;} }
