@@ -690,3 +690,67 @@ header, section, footer { width:100%; max-width:100%; min-width:0; }
 @media (prefers-reduced-motion:reduce) {
   .mobile-menu-panel, .mobile-menu-backdrop { transition:none; }
 }
+
+
+/* ============================================================
+   V9 FIXES (audit)
+   ============================================================ */
+/* 1. Desktop nav must be hidden once the hamburger takes over.
+      (Without this the header overflowed on phones/tablets and the
+      menu button sat off-screen.) */
+@media (max-width:860px){
+  nav.links{display:none;}
+  .nav{flex-wrap:nowrap;}
+  .logo{flex:0 0 auto;min-width:0;}
+  .logo img{width:auto;max-width:none;flex-shrink:0;}
+  .nav-cta{margin-left:auto;flex:0 0 auto;}
+  .menu-btn{flex:0 0 44px;}
+}
+/* 2. Never allow sideways scrolling. */
+html{overflow-x:hidden;overflow-x:clip;}
+/* 3. Drawer lives outside <header> now (header has backdrop-filter, which
+      would otherwise trap position:fixed children). */
+/* 4. .nav overrode .wrap's horizontal padding, so the logo touched the screen edge. */
+.nav{padding:18px 40px;}
+@media (max-width:1024px){.nav{padding:14px 28px;}}
+@media (max-width:600px){.nav{padding:12px 20px;}}
+@media (max-width:380px){.nav{padding:12px 16px;}}
+
+/* 5. Touch targets (>=44px) and minimum readable font sizes */
+.pd-crumb a{display:inline-block;padding:11px 2px;margin:-11px 0;}
+.pd-crumb{font-size:13px;}
+.foot-col a{padding:6px 0;margin-bottom:4px;}
+.mobile-menu-section>span{font-size:11px;}
+.mobile-menu-social{font-size:13px;}
+.mobile-menu-social a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;}
+.shop-page .products .detail-body h3 a,.card h3 a{display:inline-block;padding:6px 0;}
+.menu-btn svg{pointer-events:none;}
+.foot-bottom a{display:inline-block;padding:10px 4px;}
+.shop-page .products .detail-body .pill{font-size:11px;}
+#404 a,body>p>a{display:inline-block;padding:12px 0;}
+@media (hover:none) and (pointer:coarse){
+  .foot-col a{padding:10px 0;margin-bottom:0;}
+  .filter-chip{min-height:44px;}
+  .pg-arrow{min-width:44px;min-height:44px;}
+  .pg-dot{position:relative;}
+  .pg-dot::after{content:"";position:absolute;inset:-10px;}
+  .qty-minus,.qty-plus{min-width:44px;min-height:44px;}
+}
+
+/* 6. Layout polish found in audit */
+footer .hero-actions{justify-content:flex-start;}
+footer>p{padding-left:40px;padding-right:40px;color:#A9A394!important;}
+@media (max-width:1024px){footer>p{padding-left:28px!important;padding-right:28px!important;}}
+@media (max-width:600px){footer>p{padding-left:20px!important;padding-right:20px!important;}}
+.pg-dots:has(.pg-dot:only-child){display:none;}
+@media (max-width:600px){
+  .steps-row{gap:6px;}
+  .step-item{flex-direction:row;align-items:center;text-align:left;gap:16px;width:100%;}
+  .step-item p{max-width:none;font-size:14px;}
+  .step-item .step-n{flex:0 0 44px;}
+  .step-arrow{margin-left:21px;}
+}
+/* content stays visible if JavaScript is unavailable */
+html:not(.js) .reveal{opacity:1;transform:none;}
+.l1{font-size:10.5px!important;}
+.actives{font-size:10.5px!important;}
