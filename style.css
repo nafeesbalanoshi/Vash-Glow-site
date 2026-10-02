@@ -504,3 +504,85 @@ footer p{color:#B9B4A6;font-size:14.5px;margin-top:16px;line-height:1.7;max-widt
 .text-dash{display:inline-block;}
 .card .thumb-wrap,.pd-hero .detail-plate img,.detail-plate img{aspect-ratio:4/3;}
 .card .thumb-wrap{height:auto;min-height:0;}
+
+
+/* Vash Glow — Shop page product grid */
+.shop-page .products .wrap{max-width:1200px;}
+.shop-page .products .detail-row{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  padding:0;
+  margin:0;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  min-width:0;
+}
+.shop-page .products .wrap > .detail-row{
+  width:100%;
+}
+.shop-page .products .detail-row + .detail-row{margin-top:0;}
+.shop-page .products .detail-plate{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  padding:0;
+  border:0;
+  background:#fff;
+}
+.shop-page .products .detail-plate > a:first-child{
+  display:block;
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:#f6f3ef;
+}
+.shop-page .products .detail-plate > a:first-child img.thumb{
+  display:block;
+  width:100%;
+  height:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  object-position:center;
+}
+.shop-page .products .detail-plate .idx{
+  display:none;
+}
+.shop-page .products .detail-plate > .price-row,
+.shop-page .products .detail-plate > .limited-offer,
+.shop-page .products .detail-plate > .mono{
+  margin-left:18px;
+  margin-right:18px;
+}
+.shop-page .products .detail-plate > .price-row{margin-top:15px;}
+.shop-page .products .detail-plate > .mono{margin-bottom:18px;}
+.shop-page .products .detail-body{
+  padding:0 18px 22px;
+  min-width:0;
+}
+.shop-page .products .detail-body h3{font-size:22px;margin:0 0 8px;line-height:1.25;}
+.shop-page .products .detail-body .desc{font-size:14px;line-height:1.6;}
+.shop-page .products .detail-body .pill-row{gap:6px;}
+.shop-page .products .detail-body .pill{font-size:10px;}
+.shop-page .products .detail-body .btn{width:100%;justify-content:center;}
+.shop-page .products .wrap{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+}
+.shop-page .products .wrap > .filter-bar{
+  grid-column:1/-1;
+  display:flex;
+}
+@media (max-width:980px){
+  .shop-page .products .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+}
+@media (max-width:640px){
+  .shop-page .products .wrap{grid-template-columns:1fr;gap:22px;}
+  .shop-page .products .detail-body h3{font-size:21px;}
+}
