@@ -1,5 +1,5 @@
 /* Vash Glow — premium hero + Best Sellers (everything else uses style.css) */
-.vh-hero{background:linear-gradient(180deg,#FBF8F2,#F1EBDF);padding:clamp(34px,6vw,84px) 0 clamp(52px,8vw,104px);overflow:hidden;border-bottom:1px solid rgba(168,132,58,.22);}
+.vh-hero{background:#fff;padding:clamp(34px,6vw,84px) 0 clamp(52px,8vw,104px);overflow:hidden;border-bottom:1px solid rgba(212,175,55,.22);}
 .vh-wrap{width:min(1240px,100% - 40px);margin-inline:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,90px);align-items:center;}
 .vh-kicker{font:600 11px/1.7 'Inter',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
 .vh-kicker::before{content:"";flex:0 0 34px;height:1px;background:var(--gold);margin-top:.85em;}
@@ -10,12 +10,12 @@
 .vh-cta a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 36px;border-radius:999px;font:600 13px 'Inter',sans-serif;letter-spacing:.09em;text-transform:uppercase;transition:.3s;}
 .vh-a{background:var(--ink);color:#fff;}.vh-a:hover{background:var(--gold-deep);}
 .vh-b{border:1px solid var(--ink);color:var(--ink);}.vh-b:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
-.vh-proof{list-style:none;margin:34px 0 0;padding:26px 0 0;border-top:1px solid rgba(168,132,58,.28);display:flex;flex-wrap:wrap;gap:10px 28px;font:500 11.5px 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+.vh-proof{list-style:none;margin:34px 0 0;padding:26px 0 0;border-top:1px solid rgba(212,175,55,.28);display:flex;flex-wrap:wrap;gap:10px 28px;font:500 11.5px 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
 .vh-proof li::before{content:"✦";color:var(--gold);margin-right:9px;font-size:9px;vertical-align:1px;}
 .vh-art{position:relative;max-width:500px;width:100%;margin-left:auto;}
-.vh-arch{aspect-ratio:4/5;border-radius:999px 999px 24px 24px;overflow:hidden;background:#e9e2d3;box-shadow:0 40px 80px -30px rgba(60,45,15,.38);}
+.vh-arch{aspect-ratio:4/5;border-radius:999px 999px 24px 24px;overflow:hidden;background:#F5F6F8;box-shadow:0 40px 80px -30px rgba(17,24,39,.38);}
 .vh-arch img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block;}
-.vh-art::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(168,132,58,.4);border-radius:999px 999px 28px 28px;z-index:0;pointer-events:none;}
+.vh-art::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(212,175,55,.4);border-radius:999px 999px 28px 28px;z-index:0;pointer-events:none;}
 .vh-arch{position:relative;z-index:1;}
 .vh-chip{position:absolute;z-index:2;left:-18px;bottom:36px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px -14px rgba(0,0,0,.25);font:500 12px/1.5 'Inter',sans-serif;color:var(--ink-soft);}
 .vh-chip b{display:block;font:600 16px 'Playfair Display',serif;color:var(--ink);}
@@ -32,11 +32,11 @@
 
 /* Best Seller badge — champagne-gold, embossed */
 .bs-badge{position:absolute;top:12px;left:12px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:7px 13px 7px 11px;border-radius:999px;
-  background:linear-gradient(135deg,#E9D29B 0%,#C8A45A 48%,#A8843A 100%);color:#1a1405;font:700 10px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;
-  box-shadow:0 6px 16px -4px rgba(120,90,25,.55),inset 0 1px 0 rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.35);}
+  background:#D4AF37;color:#111827;font:700 10px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 6px 16px -4px rgba(17,24,39,.55),inset 0 1px 0 rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.35);}
 .bs-badge svg{flex:0 0 auto;filter:drop-shadow(0 1px 0 rgba(255,255,255,.4));}
 .bestsellers-v2 .grid.bs-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;}
-.bestsellers-v2 .card.is-bs{border:1px solid rgba(200,164,90,.45);}
+.bestsellers-v2 .card.is-bs{border:1px solid rgba(212,175,55,.45);}
 @media(max-width:1100px){.bestsellers-v2 .grid.bs-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:760px){
   .bestsellers-v2 .grid.bs-grid{gap:12px;}
