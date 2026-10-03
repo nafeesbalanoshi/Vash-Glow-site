@@ -78,18 +78,42 @@
       });
     });
 
-    /* Shop filters — one handler only. */
+    /* Shop filters — category chips, drawer links and #hash links all use this. */
     var chips=document.querySelectorAll('.filter-chip'), rows=document.querySelectorAll('.shop-page .detail-row');
     if(chips.length && rows.length){
-      function applyFilter(category,updateHash){
-        var valid=false;
-        chips.forEach(function(chip){var active=chip.getAttribute('data-filter')===category;chip.classList.toggle('active',active);if(active)valid=true;});
-        if(!valid) category='all';
-        rows.forEach(function(row){row.hidden=!(category==='all'||row.getAttribute('data-category')===category);});
-        if(updateHash && history.replaceState) history.replaceState(null,'',category==='all'?window.location.pathname:'#'+category);
+      var GROUPS={skin:['brightening','sun','acne','scar','hydration']};
+      var LABELS={};chips.forEach(function(c){LABELS[c.getAttribute('data-filter')]=c.textContent.trim();});
+      var countEl=document.getElementById('shop-count'), firstRun=true;
+      function matches(row,category){
+        if(category==='all') return true;
+        var c=row.getAttribute('data-category');
+        return GROUPS[category]?GROUPS[category].indexOf(c)>-1:c===category;
       }
-      chips.forEach(function(chip){chip.addEventListener('click',function(){applyFilter(chip.getAttribute('data-filter')||'all',true);});});
-      var hash=window.location.hash.replace(/^#/,''); if(hash) applyFilter(hash,false);
+      function applyFilter(category,updateHash,scroll){
+        var valid=false;
+        chips.forEach(function(chip){
+          var active=chip.getAttribute('data-filter')===category;
+          chip.classList.toggle('active',active);chip.setAttribute('aria-pressed',active?'true':'false');
+          if(active){valid=true;
+            if(chip.parentNode && chip.parentNode.scrollTo){var bar=chip.parentNode;bar.scrollTo({left:chip.offsetLeft-(bar.clientWidth-chip.offsetWidth)/2,behavior:firstRun?'auto':'smooth'});}
+          }
+        });
+        if(!valid) category='all';
+        var shown=0;
+        rows.forEach(function(row){
+          var ok=matches(row,category); row.hidden=!ok;
+          if(ok){shown++; row.classList.add('in');}
+        });
+        if(countEl){countEl.textContent=category==='all'?('Showing all '+shown+' products'):('Showing '+shown+' '+(shown===1?'product':'products')+' in '+LABELS[category]);}
+        if(updateHash && history.replaceState) history.replaceState(null,'',category==='all'?window.location.pathname:'#'+category);
+        if(scroll){var bar2=document.querySelector('.filter-bar');if(bar2){var h=(document.querySelector('header')||{offsetHeight:0}).offsetHeight;window.scrollTo({top:Math.max(0,bar2.getBoundingClientRect().top+window.pageYOffset-h-12),behavior:'smooth'});}}
+        firstRun=false;
+      }
+      chips.forEach(function(chip){chip.addEventListener('click',function(){applyFilter(chip.getAttribute('data-filter')||'all',true,false);});});
+      function fromHash(scroll){var h=window.location.hash.replace(/^#/,'');applyFilter(h||'all',false,scroll&&!!h);}
+      window.addEventListener('hashchange',function(){fromHash(true);});
+      fromHash(false);
+      if(window.location.hash){window.addEventListener('load',function(){fromHash(true);});}
     }
 
     /* Mobile navigation — independent of optional browser APIs. */
@@ -107,7 +131,7 @@
       closeElements.forEach(function(el){el.addEventListener('click',function(){setMenu(false);});});
       menuLinks.forEach(function(link){link.addEventListener('click',function(){setMenu(false);});});
       document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
-      window.addEventListener('resize',function(){if(window.innerWidth>860)setMenu(false);},{passive:true});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024 && !(window.matchMedia && window.matchMedia('(pointer:coarse)').matches))setMenu(false);},{passive:true});
     }
   });
 })();
