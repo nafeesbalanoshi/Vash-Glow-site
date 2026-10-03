@@ -78,42 +78,48 @@
       });
     });
 
-    /* Shop filters — category chips, drawer links and #hash links all use this. */
+    /* Shop: category chips + live search (works together; also #hash and ?q= links). */
     var chips=document.querySelectorAll('.filter-chip'), rows=document.querySelectorAll('.shop-page .detail-row');
     if(chips.length && rows.length){
       var GROUPS={skin:['brightening','sun','acne','scar','hydration']};
-      var LABELS={};chips.forEach(function(c){LABELS[c.getAttribute('data-filter')]=c.textContent.trim();});
-      var countEl=document.getElementById('shop-count'), firstRun=true;
-      function matches(row,category){
-        if(category==='all') return true;
-        var c=row.getAttribute('data-category');
-        return GROUPS[category]?GROUPS[category].indexOf(c)>-1:c===category;
+      var input=document.getElementById('shop-search'), clearBtn=document.getElementById('shop-search-clear'), emptyEl=document.getElementById('shop-empty'), resetBtn=document.getElementById('shop-reset');
+      var current='all', query='';
+      var haystack=[].map.call(rows,function(r){return (r.textContent+' '+r.getAttribute('data-category')).toLowerCase().replace(/\s+/g,' ');});
+      function inCat(row,cat){if(cat==='all')return true;var c=row.getAttribute('data-category');return GROUPS[cat]?GROUPS[cat].indexOf(c)>-1:c===cat;}
+      function render(){
+        var terms=query.toLowerCase().split(/\s+/).filter(Boolean), shown=0;
+        rows.forEach(function(row,i){
+          var ok=inCat(row,current)&&terms.every(function(t){return haystack[i].indexOf(t)>-1;});
+          row.hidden=!ok; if(ok){shown++;row.classList.add('in');}
+        });
+        if(emptyEl) emptyEl.hidden=shown>0;
+        if(clearBtn) clearBtn.hidden=!query;
       }
-      function applyFilter(category,updateHash,scroll){
+      function setCategory(cat,updateHash){
         var valid=false;
         chips.forEach(function(chip){
-          var active=chip.getAttribute('data-filter')===category;
-          chip.classList.toggle('active',active);chip.setAttribute('aria-pressed',active?'true':'false');
-          if(active){valid=true;
-            if(chip.parentNode && chip.parentNode.scrollTo){var bar=chip.parentNode;bar.scrollTo({left:chip.offsetLeft-(bar.clientWidth-chip.offsetWidth)/2,behavior:firstRun?'auto':'smooth'});}
-          }
+          var on=chip.getAttribute('data-filter')===cat;
+          chip.classList.toggle('active',on);chip.setAttribute('aria-pressed',on?'true':'false');
+          if(on){valid=true;var bar=chip.parentNode;if(bar&&bar.scrollTo)bar.scrollTo({left:chip.offsetLeft-(bar.clientWidth-chip.offsetWidth)/2,behavior:'smooth'});}
         });
-        if(!valid) category='all';
-        var shown=0;
-        rows.forEach(function(row){
-          var ok=matches(row,category); row.hidden=!ok;
-          if(ok){shown++; row.classList.add('in');}
-        });
-        if(countEl){countEl.textContent=category==='all'?('Showing all '+shown+' products'):('Showing '+shown+' '+(shown===1?'product':'products')+' in '+LABELS[category]);}
-        if(updateHash && history.replaceState) history.replaceState(null,'',category==='all'?window.location.pathname:'#'+category);
-        if(scroll){var bar2=document.querySelector('.filter-bar');if(bar2){var h=(document.querySelector('header')||{offsetHeight:0}).offsetHeight;window.scrollTo({top:Math.max(0,bar2.getBoundingClientRect().top+window.pageYOffset-h-12),behavior:'smooth'});}}
-        firstRun=false;
+        current=valid?cat:'all'; render();
+        if(updateHash&&history.replaceState)history.replaceState(null,'',current==='all'?window.location.pathname:'#'+current);
       }
-      chips.forEach(function(chip){chip.addEventListener('click',function(){applyFilter(chip.getAttribute('data-filter')||'all',true,false);});});
-      function fromHash(scroll){var h=window.location.hash.replace(/^#/,'');applyFilter(h||'all',false,scroll&&!!h);}
-      window.addEventListener('hashchange',function(){fromHash(true);});
-      fromHash(false);
-      if(window.location.hash){window.addEventListener('load',function(){fromHash(true);});}
+      chips.forEach(function(chip){chip.addEventListener('click',function(){setCategory(chip.getAttribute('data-filter')||'all',true);});});
+      if(input){
+        input.addEventListener('input',function(){query=input.value.trim();render();});
+        input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();input.blur();}});
+        if(clearBtn)clearBtn.addEventListener('click',function(){input.value='';query='';render();input.focus();});
+      }
+      if(resetBtn)resetBtn.addEventListener('click',function(){if(input)input.value='';query='';setCategory('all',true);});
+      function fromUrl(){
+        var h=window.location.hash.replace(/^#/,''), q=new URLSearchParams(window.location.search).get('q');
+        if(q&&input){input.value=q;query=q.trim();}
+        if(h==='search'){setCategory('all',false);if(input){setTimeout(function(){input.scrollIntoView({block:'center',behavior:'smooth'});input.focus({preventScroll:true});},250);}}
+        else setCategory(h||'all',false);
+      }
+      window.addEventListener('hashchange',fromUrl);
+      fromUrl();
     }
 
     /* Mobile navigation — independent of optional browser APIs. */
