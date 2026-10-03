@@ -34,8 +34,8 @@ permalink: /shop
 <a href="/about">About</a>
 <a href="/blog">Journal</a>
 <a href="/contact">Contact</a>
-</nav>
-<a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." rel="noopener" target="_blank"><svg aria-hidden="true" class="inline-icon wa-nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none"></circle><path d="M8.5 8.5c.4-.5 1-.5 1.4-.1l1 1c.3.3.3.7.1 1l-.5.7c.5.9 1.3 1.7 2.2 2.2l.7-.5c.3-.2.7-.2 1 .1l1 1c.4.4.3 1-.1 1.4-.7.6-1.6.7-2.4.4-3.1-1.2-5.5-3.6-6.7-6.7-.3-.8-.2-1.7.3-2.5z" fill="currentColor" stroke="none"></path></svg> Order on WhatsApp <svg aria-hidden="true" class="inline-icon arrow-icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+<a class="nav-search" href="/shop#search" aria-label="Search products"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="20"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></a></nav>
+<a class="nav-search-m" href="/shop#search" aria-label="Search products"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="20"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></a><a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." rel="noopener" target="_blank"><svg aria-hidden="true" class="inline-icon wa-nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none"></circle><path d="M8.5 8.5c.4-.5 1-.5 1.4-.1l1 1c.3.3.3.7.1 1l-.5.7c.5.9 1.3 1.7 2.2 2.2l.7-.5c.3-.2.7-.2 1 .1l1 1c.4.4.3 1-.1 1.4-.7.6-1.6.7-2.4.4-3.1-1.2-5.5-3.6-6.7-6.7-.3-.8-.2-1.7.3-2.5z" fill="currentColor" stroke="none"></path></svg> Order on WhatsApp <svg aria-hidden="true" class="inline-icon arrow-icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
 <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg aria-hidden="true" class="menu-icon" viewBox="0 0 24 24"><path d="M4 8h16M4 12h11M4 16h16"></path></svg></button>
 </div>
 
@@ -68,6 +68,7 @@ permalink: /shop
 </section>
 <section class="products no-border-top">
 <div class="wrap">
+<div class="shop-search" id="search" role="search"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" width="18"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input id="shop-search" type="search" placeholder="Search products or ingredients" autocomplete="off" enterkeyhint="search" aria-label="Search products"><button type="button" id="shop-search-clear" aria-label="Clear search" hidden>&times;</button></div>
 <div class="filter-bar reveal" role="group" aria-label="Filter products by category">
 <button class="filter-chip active" data-filter="all" aria-pressed="true">All Products</button>
 <button class="filter-chip" data-filter="skin" aria-pressed="false">Skin Care</button>
@@ -79,7 +80,7 @@ permalink: /shop
 <button class="filter-chip" data-filter="hydration" aria-pressed="false">Hydration</button>
 <button class="filter-chip" data-filter="body" aria-pressed="false">Body Care</button>
 </div>
-<p class="shop-count" id="shop-count" aria-live="polite"></p>
+<p class="shop-empty" id="shop-empty" hidden>No products match your search. <button type="button" id="shop-reset">Clear search</button></p>
 <div class="detail-row reveal" data-category="brightening">
 <div class="detail-plate">
 <a class="media" href="/product-brightening-cream"><img alt="01 / BRIGHTENING" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/brightening-cream.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>

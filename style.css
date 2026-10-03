@@ -918,3 +918,25 @@ html:not(.js) .reveal{opacity:1;transform:none;}
   .hero-banner .eyebrow{flex-wrap:wrap;text-align:center;line-height:1.7;}
   .hero-banner .eyebrow::before{display:none;}
 }
+
+/* ---------- search ---------- */
+.shop-count{display:none!important;}
+.shop-search{grid-column:1/-1;position:relative;display:flex;align-items:center;gap:12px;max-width:560px;width:100%;margin:0 auto 22px;padding:0 18px;min-height:54px;background:#fff;border:1px solid var(--line-strong,#e3dccd);border-radius:999px;color:var(--ink-soft);transition:border-color .25s,box-shadow .25s;}
+.shop-search:focus-within{border-color:var(--gold);box-shadow:0 0 0 4px rgba(200,164,90,.16);color:var(--gold-deep);}
+.shop-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:400 16px 'Inter',sans-serif;color:var(--ink);height:52px;-webkit-appearance:none;appearance:none;}
+.shop-search input::placeholder{color:var(--ink-mute);}
+.shop-search input::-webkit-search-cancel-button{display:none;}
+.shop-search button{width:32px;height:32px;border:0;border-radius:50%;background:var(--cream);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;}
+.shop-search button[hidden]{display:none;}
+.shop-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:15px;}
+.shop-empty[hidden]{display:none;}
+.shop-empty button{border:0;background:none;color:var(--gold-deep);font:600 15px 'Inter',sans-serif;text-decoration:underline;cursor:pointer;padding:8px;}
+.nav-search,.nav-search-m{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--ink);transition:color .2s;}
+.nav-search:hover,.nav-search-m:hover{color:var(--gold-deep);}
+.nav-search-m{display:none;}
+nav.links .nav-search{border:0!important;padding:0;margin-left:6px;}
+nav.links .nav-search::after{display:none!important;}
+@media (max-width:1024px), (hover:none) and (pointer:coarse){
+  header .nav-search-m{display:inline-flex;grid-column:3;grid-row:1;justify-self:end;margin-right:-10px;}
+}
+@media (max-width:760px){.shop-search{margin-bottom:16px;min-height:50px;}.shop-search input{height:48px;}}
