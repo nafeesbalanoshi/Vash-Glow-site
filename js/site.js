@@ -116,7 +116,7 @@
         var h=window.location.hash.replace(/^#/,''), q=new URLSearchParams(window.location.search).get('q');
         if(q&&input){input.value=q;query=q.trim();}
         if(h==='search'){setCategory('all',false);if(input){setTimeout(function(){input.scrollIntoView({block:'center',behavior:'smooth'});input.focus({preventScroll:true});},250);}}
-        else setCategory(h||'all',false);
+        else{ if(h&&input&&!q){input.value='';query='';} setCategory(h||'all',false); }
       }
       window.addEventListener('hashchange',fromUrl);
       fromUrl();
