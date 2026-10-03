@@ -36,7 +36,7 @@ permalink: /shop
 <a href="/contact">Contact</a>
 </nav>
 <a class="nav-cta" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." rel="noopener" target="_blank"><svg aria-hidden="true" class="inline-icon wa-nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none"></circle><path d="M8.5 8.5c.4-.5 1-.5 1.4-.1l1 1c.3.3.3.7.1 1l-.5.7c.5.9 1.3 1.7 2.2 2.2l.7-.5c.3-.2.7-.2 1 .1l1 1c.4.4.3 1-.1 1.4-.7.6-1.6.7-2.4.4-3.1-1.2-5.5-3.6-6.7-6.7-.3-.8-.2-1.7.3-2.5z" fill="currentColor" stroke="none"></path></svg> Order on WhatsApp <svg aria-hidden="true" class="inline-icon arrow-icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
-<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg aria-hidden="true" class="menu-icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg aria-hidden="true" class="menu-icon" viewBox="0 0 24 24"><path d="M4 8h16M4 12h11M4 16h16"></path></svg></button>
 </div>
 
 </header>
@@ -53,7 +53,7 @@ permalink: /shop
 <a href="/contact">Contact <span>→</span></a>
 </nav>
 <div class="mobile-menu-section"><span>Shop by category</span>
-<a href="/shop">Skin Care <span>→</span></a>
+<a href="/shop#skin">Skin Care <span>→</span></a>
 <a href="/shop#hair">Hair Care <span>→</span></a>
 <a href="/shop#body">Body Care <span>→</span></a>
 </div>
@@ -68,21 +68,23 @@ permalink: /shop
 </section>
 <section class="products no-border-top">
 <div class="wrap">
-<div class="filter-bar reveal">
-<button class="filter-chip active" data-filter="all">All Products</button>
-<button class="filter-chip" data-filter="brightening">Brightening</button>
-<button class="filter-chip" data-filter="sun">Sun Care</button>
-<button class="filter-chip" data-filter="acne">Acne</button>
-<button class="filter-chip" data-filter="hair">Hair Care</button>
-<button class="filter-chip" data-filter="scar">Scar Care</button>
-<button class="filter-chip" data-filter="hydration">Hydration</button>
-<button class="filter-chip" data-filter="body">Body Care</button>
+<div class="filter-bar reveal" role="group" aria-label="Filter products by category">
+<button class="filter-chip active" data-filter="all" aria-pressed="true">All Products</button>
+<button class="filter-chip" data-filter="skin" aria-pressed="false">Skin Care</button>
+<button class="filter-chip" data-filter="brightening" aria-pressed="false">Brightening</button>
+<button class="filter-chip" data-filter="sun" aria-pressed="false">Sun Care</button>
+<button class="filter-chip" data-filter="acne" aria-pressed="false">Acne</button>
+<button class="filter-chip" data-filter="hair" aria-pressed="false">Hair Care</button>
+<button class="filter-chip" data-filter="scar" aria-pressed="false">Scar Care</button>
+<button class="filter-chip" data-filter="hydration" aria-pressed="false">Hydration</button>
+<button class="filter-chip" data-filter="body" aria-pressed="false">Body Care</button>
 </div>
+<p class="shop-count" id="shop-count" aria-live="polite"></p>
 <div class="detail-row reveal" data-category="brightening">
 <div class="detail-plate">
-<a href="/product-brightening-cream"><img alt="01 / BRIGHTENING" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/brightening-cream.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>
+<a class="media" href="/product-brightening-cream"><img alt="01 / BRIGHTENING" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/brightening-cream.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>
 <div class="idx">01 / BRIGHTENING</div>
-<div>
+<div class="meta">
 <div class="price-row"><span class="price-old" style="font-size:15px;">Rs. 1,450</span><div class="price">Rs. 1,305</div></div><div class="limited-offer">10% OFF · Limited Time Offer</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">30g · For Men &amp; Women</div>
 </div>
@@ -101,9 +103,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="brightening">
 <div class="detail-plate">
-<a href="/product-face-wash"><img alt="02 / CLEANSE" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/face-wash.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>
+<a class="media" href="/product-face-wash"><img alt="02 / CLEANSE" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/face-wash.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>
 <div class="idx">02 / CLEANSE</div>
-<div>
+<div class="meta">
 <div class="price-row"><span class="price-old" style="font-size:15px;">Rs. 1,250</span><div class="price">Rs. 1,125</div></div><div class="limited-offer">10% OFF · Limited Time Offer</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">100ml</div>
 </div>
@@ -122,9 +124,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="sun">
 <div class="detail-plate">
-<a href="/product-sun-defense"><img alt="03 / DEFENSE" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/sun-defense.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>
+<a class="media" href="/product-sun-defense"><img alt="03 / DEFENSE" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/sun-defense.jpg" width="600"/><span class="discount-badge" style="position:absolute;top:10px;right:10px;"><span class="l1">Limited Offer</span><span class="l2">10% OFF</span></span></a>
 <div class="idx">03 / DEFENSE</div>
-<div>
+<div class="meta">
 <div class="price-row"><span class="price-old" style="font-size:15px;">Rs. 1,150</span><div class="price">Rs. 1,035</div></div><div class="limited-offer">10% OFF · Limited Time Offer</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">SPF 60 PA++++</div>
 </div>
@@ -143,9 +145,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="acne">
 <div class="detail-plate is-oos">
-<div class="thumb-wrap"><a href="/product-seboteen-cream"><img alt="04A / CLARITY" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/seboteen-cream.jpg" width="600"/><span class="oos-badge">Out of Stock</span></a></div>
+<a class="media" href="/product-seboteen-cream"><img alt="04A / CLARITY" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/seboteen-cream.jpg" width="600"/><span class="oos-badge">Out of Stock</span></a>
 <div class="idx">04A / CLARITY</div>
-<div>
+<div class="meta">
 <div class="price tbd" style="font-size:13px;">Out of Stock</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">30g</div>
 </div>
@@ -164,9 +166,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="acne">
 <div class="detail-plate is-oos">
-<div class="thumb-wrap"><a href="/product-seboteen-facewash"><img alt="04B / CLARITY" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/seboteen-facewash.jpg" width="600"/><span class="oos-badge">Out of Stock</span></a></div>
+<a class="media" href="/product-seboteen-facewash"><img alt="04B / CLARITY" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/seboteen-facewash.jpg" width="600"/><span class="oos-badge">Out of Stock</span></a>
 <div class="idx">04B / CLARITY</div>
-<div>
+<div class="meta">
 <div class="price tbd" style="font-size:13px;">Out of Stock</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">100ml</div>
 </div>
@@ -185,9 +187,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="hair">
 <div class="detail-plate">
-<a href="/product-hair-armor"><img alt="05 / HAIR CARE" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/hair-armor.jpg" width="600"/></a>
+<a class="media" href="/product-hair-armor"><img alt="05 / HAIR CARE" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/hair-armor.jpg" width="600"/></a>
 <div class="idx">05 / HAIR CARE</div>
-<div>
+<div class="meta">
 <div class="price">Rs. 1,280</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">100ml · For All Hair Types</div>
 </div>
@@ -206,9 +208,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="sun">
 <div class="detail-plate">
-<div class="thumb-wrap"><a href="/product-bb-cream"><img alt="06 / PERFECTOR" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/bb-cream.jpg" width="600"/><span class="oos-badge">Out of Stock</span></a></div>
+<a class="media" href="/product-bb-cream"><img alt="06 / PERFECTOR" class="thumb" height="600" loading="lazy" onerror="this.style.display='none'" src="/images/bb-cream.jpg" width="600"/><span class="oos-badge">Out of Stock</span></a>
 <div class="idx">06 / PERFECTOR</div>
-<div>
+<div class="meta">
 <div class="price tbd" style="font-size:13px;">Out of Stock</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">SPF 50 PA+++</div>
 </div>
@@ -227,9 +229,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="scar">
 <div class="detail-plate">
-<div class="thumb-wrap"><a href="/product-scaroren"><img alt="08 / SCAR CARE" class="thumb" height="600" loading="lazy" src="/images/scaroren.jpg" width="600"/><span class="soon-badge">Coming Soon</span></a></div>
+<a class="media" href="/product-scaroren"><img alt="08 / SCAR CARE" class="thumb" height="600" loading="lazy" src="/images/scaroren.jpg" width="600"/><span class="soon-badge">Coming Soon</span></a>
 <div class="idx">08 / SCAR CARE</div>
-<div>
+<div class="meta">
 <div class="price tbd" style="font-size:13px;">Coming Soon</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">20g</div>
 </div>
@@ -248,9 +250,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="brightening">
 <div class="detail-plate">
-<div class="thumb-wrap"><a href="/product-glutafad-soap"><img alt="09 / BRIGHTENING" class="thumb" height="600" loading="lazy" src="/images/glutafad-soap.jpg" width="600"/><span class="soon-badge">Coming Soon</span></a></div>
+<a class="media" href="/product-glutafad-soap"><img alt="09 / BRIGHTENING" class="thumb" height="600" loading="lazy" src="/images/glutafad-soap.jpg" width="600"/><span class="soon-badge">Coming Soon</span></a>
 <div class="idx">09 / BRIGHTENING</div>
-<div>
+<div class="meta">
 <div class="price tbd" style="font-size:13px;">Coming Soon</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">75g</div>
 </div>
@@ -269,9 +271,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="brightening">
 <div class="detail-plate">
-<div class="thumb-wrap"><a href="/product-glutafad-facewash"><img alt="10 / BRIGHTENING" class="thumb" height="600" loading="lazy" src="/images/glutafad-facewash.jpg" width="600"/></a></div>
+<a class="media" href="/product-glutafad-facewash"><img alt="10 / BRIGHTENING" class="thumb" height="600" loading="lazy" src="/images/glutafad-facewash.jpg" width="600"/></a>
 <div class="idx">10 / BRIGHTENING</div>
-<div>
+<div class="meta">
 <div class="price">Rs. 1,280</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">For All Skin Types</div>
 </div>
@@ -290,9 +292,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="hydration">
 <div class="detail-plate">
-<div class="thumb-wrap"><a href="/product-hydrovey"><img alt="11 / HYDRATION" class="thumb" height="600" loading="lazy" src="/images/hydrovey.jpg" width="600"/></a></div>
+<a class="media" href="/product-hydrovey"><img alt="11 / HYDRATION" class="thumb" height="600" loading="lazy" src="/images/hydrovey.jpg" width="600"/></a>
 <div class="idx">11 / HYDRATION</div>
-<div>
+<div class="meta">
 <div class="price">Rs. 1,150</div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">With Ceramides &amp; Hyaluronic Acid</div>
 </div>
@@ -311,9 +313,9 @@ permalink: /shop
 </div>
 <div class="detail-row reveal" data-category="body" id="glutafad-hand-foot">
 <div class="detail-plate">
-<a href="/product-glutafad-hand-foot-cream"><img alt="Glutafad Hand &amp; Foot Whitening &amp; Brightening Cream" class="thumb" height="1152" loading="lazy" src="/images/glutafad-hand-foot.jpg" width="1536"/><span class="new-badge">New</span></a>
+<a class="media" href="/product-glutafad-hand-foot-cream"><img alt="Glutafad Hand &amp; Foot Whitening &amp; Brightening Cream" class="thumb" height="1152" loading="lazy" src="/images/glutafad-hand-foot.jpg" width="1536"/><span class="new-badge">New</span></a>
 <div class="idx">12 / BODY CARE</div>
-<div>
+<div class="meta">
 <div class="price-row"><div class="price">Rs. 1,500</div></div>
 <div class="mono" style="font-size:11px;color:var(--ink-soft);margin-top:4px;">100g · For hands, feet, elbows &amp; knees</div>
 </div>
