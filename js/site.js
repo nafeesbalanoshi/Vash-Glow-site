@@ -140,4 +140,29 @@
       window.addEventListener('resize',function(){if(window.innerWidth>1024 && !(window.matchMedia && window.matchMedia('(pointer:coarse)').matches))setMenu(false);},{passive:true});
     }
   });
+
+    /* Hero carousel — lightweight, 4s autoplay, pause on hover/focus/hidden tab, swipe + dots */
+    (function(){
+      var hs=document.querySelector('.hs'); if(!hs) return;
+      var slides=[].slice.call(hs.querySelectorAll('.hs-slide')), dots=[].slice.call(hs.querySelectorAll('.hs-dots button'));
+      if(slides.length<2) return;
+      var i=0, timer=null, reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function go(n){
+        n=(n+slides.length)%slides.length; if(n===i) return;
+        slides[i].classList.remove('is-active'); slides[i].setAttribute('aria-hidden','true'); dots[i].classList.remove('is-active'); dots[i].removeAttribute('aria-current');
+        i=n;
+        slides[i].classList.add('is-active'); slides[i].removeAttribute('aria-hidden'); dots[i].classList.add('is-active'); dots[i].setAttribute('aria-current','true');
+      }
+      function stop(){ if(timer){clearInterval(timer);timer=null;} }
+      function start(){ stop(); if(reduce||document.hidden) return; timer=setInterval(function(){go(i+1);},4000); }
+      slides.forEach(function(s,k){ if(k) s.setAttribute('aria-hidden','true'); });
+      dots.forEach(function(d,k){ d.addEventListener('click',function(){go(k);start();}); });
+      hs.addEventListener('mouseenter',stop); hs.addEventListener('mouseleave',start);
+      hs.addEventListener('focusin',stop); hs.addEventListener('focusout',start);
+      document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+      var x0=null;
+      hs.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+      hs.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>45){go(i+(dx<0?1:-1));start();} },{passive:true});
+      start();
+    })();
 })();
