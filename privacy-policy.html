@@ -22,7 +22,8 @@ permalink: /privacy-policy
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-<link href="https://vashglow.com/privacy-policy" rel="canonical"/><script>document.documentElement.className+=' js';</script></head>
+<link href="https://vashglow.com/privacy-policy" rel="canonical"/><script>document.documentElement.className+=' js';</script><link href="cart.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="announce" role="note"><span>🔬 Advanced Dermatologist-Tested Skincare</span><i aria-hidden="true">|</i><span>Expert Skincare Routine</span></div>
 <header>
@@ -34,7 +35,7 @@ permalink: /privacy-policy
 <a href="shop">Our Formulations</a>
 <a href="about">Our Story</a>
 </nav>
-<div class="nav-right"><a class="ic-btn" href="shop#search" aria-label="Search products"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15" viewBox="0 0 24 24" width="22"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.2-4.2"></path></svg></a></div>
+<div class="nav-right"><a class="ic-btn" href="shop#search" aria-label="Search products"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15" viewBox="0 0 24 24" width="22"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.2-4.2"></path></svg></a><button type="button" class="ic-btn vg-cart-toggle" aria-label="Open cart" aria-controls="vg-cart-drawer" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg><span class="vg-cart-count" aria-hidden="true">0</span></button></div>
 <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg aria-hidden="true" class="menu-icon" viewBox="0 0 24 24"><path d="M4 8h16M4 12h11M4 16h16"></path></svg></button>
 </div>
 </header>
@@ -116,5 +117,27 @@ permalink: /privacy-policy
 <a class="sticky-wa" href="https://wa.me/923317070775?text=Hi%2C%20I%27d%20like%20to%20order%20from%20Vash%20Glow." rel="noopener" target="_blank"><svg aria-hidden="true" class="inline-icon wa-icon" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="currentColor" r="10" stroke="none"></circle><path d="M8.2 8.3c.4-.5 1-.6 1.4-.2l1.1 1.1c.3.3.3.8.1 1.1l-.6.8c.6 1.1 1.5 2 2.6 2.6l.8-.6c.3-.2.8-.2 1.1.1l1.1 1.1c.4.4.3 1-.2 1.4-.7.6-1.7.8-2.6.4-3.4-1.4-6-4-7.4-7.4-.4-.9-.2-1.9.4-2.6z" fill="white" stroke="none"></path></svg><span class="wa-text"> WhatsApp Order</span></a>
 <a aria-label="Back to top" class="back-top" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><svg aria-hidden="true" class="inline-icon arrow-icon" viewbox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></a>
 <script src="js/site.js"></script>
+<script src="cart.js" defer></script>
+<div class="vg-cart-overlay" id="vg-cart-overlay" aria-hidden="true"></div>
+<aside class="vg-cart-drawer" id="vg-cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true">
+  <div class="vg-cart-head">
+    <h2 class="vg-cart-title">Your Cart <span class="vg-cart-head-count" id="vg-cart-head-count">0</span></h2>
+    <button type="button" class="vg-cart-close" id="vg-cart-close" aria-label="Close cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="vg-cart-body">
+    <div class="vg-cart-empty" id="vg-cart-empty">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+      <p>Your cart is empty</p>
+      <span>Add your favourite formulas to get started.</span>
+      <a class="vg-cart-shop-link" href="shop">Browse Products</a>
+    </div>
+    <ul class="vg-cart-items" id="vg-cart-items"></ul>
+  </div>
+  <div class="vg-cart-foot" id="vg-cart-foot">
+    <div class="vg-cart-total-row"><span class="vg-cart-total-label">Total</span><span class="vg-cart-total-value" id="vg-cart-total">Rs. 0</span></div>
+    <p class="vg-cart-note">Shipping &amp; delivery details confirmed on WhatsApp.</p>
+    <button type="button" class="vg-cart-checkout" id="vg-cart-checkout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.75-2.12 1.01-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .54.01.17.01.41-.07.64.49.24.57.81 1.99.88 2.13.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.38-.23.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg><span>Proceed to WhatsApp Checkout</span></button>
+  </div>
+</aside>
 </body>
 </html>
