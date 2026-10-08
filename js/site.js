@@ -165,4 +165,33 @@
       hs.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>45){go(i+(dx<0?1:-1));start();} },{passive:true});
       start();
     })();
+
+    /* Product gallery (thumbnail swap) + accordion */
+    (function(){
+      var g=document.querySelector('[data-gallery]');
+      if(g){
+        var imgs=[].slice.call(g.querySelectorAll('.pd2-main img')), th=[].slice.call(g.querySelectorAll('.product-gallery-thumbnails button'));
+        var show=function(i){imgs.forEach(function(im,k){im.classList.toggle('is-active',k===i);});th.forEach(function(b,k){b.classList.toggle('active',k===i);b.setAttribute('aria-selected',k===i?'true':'false');});};
+        th.forEach(function(b,k){
+          b.addEventListener('click',function(){show(k);});
+          b.addEventListener('focus',function(){show(k);});
+          b.addEventListener('mouseenter',function(){ if(window.matchMedia && window.matchMedia('(hover:hover)').matches) show(k); });
+        });
+      }
+      [].slice.call(document.querySelectorAll('[data-accordion]')).forEach(function(acc){
+        var items=[].slice.call(acc.querySelectorAll('.pd2-acc-item'));
+        function setOpen(it,open){
+          var btn=it.querySelector('.pd2-acc-btn'), p=it.querySelector('.pd2-acc-panel');
+          it.classList.toggle('is-open',open); btn.setAttribute('aria-expanded',open?'true':'false');
+          p.style.maxHeight=open?p.scrollHeight+'px':'0px';
+        }
+        items.forEach(function(it){
+          if(it.classList.contains('is-open')) setOpen(it,true); else it.querySelector('.pd2-acc-panel').style.maxHeight='0px';
+          it.querySelector('.pd2-acc-btn').addEventListener('click',function(){
+            var willOpen=!it.classList.contains('is-open'); items.forEach(function(o){ if(o!==it) setOpen(o,false); }); setOpen(it,willOpen);
+          });
+        });
+        window.addEventListener('resize',function(){ items.forEach(function(it){ if(it.classList.contains('is-open')) it.querySelector('.pd2-acc-panel').style.maxHeight=it.querySelector('.pd2-acc-panel').scrollHeight+'px'; }); },{passive:true});
+      });
+    })();
 })();
