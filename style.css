@@ -843,8 +843,9 @@ html:not(.js) .reveal{opacity:1;transform:none;}
   .shop-page .products .detail-plate > .meta .mono{font-size:10px!important;line-height:1.35;margin-top:3px!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
   .shop-page .products .detail-body{padding:0 12px 12px;}
   .shop-page .products .detail-body h3{font-size:14.5px;line-height:1.25;margin:6px 0 6px;min-height:2.5em;}
-  .shop-page .products .detail-body .actives,.shop-page .products .detail-body .pill-row{display:none;}
-  .shop-page .products .detail-body .desc{font-size:12px;line-height:1.5;margin:0 0 12px;min-height:4.5em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  .shop-page .products .detail-body .pill-row{display:none;}
+  .shop-page .products .detail-body .actives{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:9px;line-height:1.4;letter-spacing:.03em;min-height:2.8em;margin:0 0 6px;}
+  .shop-page .products .detail-body .desc{font-size:12px;line-height:1.5;margin:0 0 12px;min-height:3em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
   .shop-page .products .detail-body .btn{min-height:42px;padding:8px 6px;font-size:10.5px;line-height:1.2;text-align:center;gap:4px;}
   .shop-page .products .detail-body .btn .arrow-icon{display:none;}
   .shop-page .products .detail-plate .oos-badge,.shop-page .products .detail-plate .soon-badge,.shop-page .products .detail-plate .new-badge{top:8px!important;left:8px;right:auto;padding:5px 10px;font-size:9px;letter-spacing:.05em;}
@@ -1161,3 +1162,25 @@ footer>p{color:#94A3B8!important;}
 .trust .trust-item{background:#F8F9FA;border:1px solid #E2E8F0;}
 .trust .trust-item:hover{background:#FFFFFF;border-color:rgba(212,175,55,.55);box-shadow:0 10px 15px -3px rgba(0,0,0,.05);}
 .trust .trust-item .n{color:#D4AF37;}
+
+/* ===== Floating WhatsApp — official glyph in a round green button (all sizes) ===== */
+.sticky-wa,.sticky-wa:hover{width:56px!important;height:56px!important;padding:0!important;border-radius:50%!important;background:#25D366;color:#FFFFFF;
+  display:flex;align-items:center;justify-content:center;gap:0;font-size:0;box-shadow:0 10px 26px -8px rgba(15,23,42,.45);transition:transform .25s ease,box-shadow .25s ease;}
+.sticky-wa:hover{transform:scale(1.07);box-shadow:0 14px 30px -8px rgba(37,211,102,.55);}
+.sticky-wa .wa-text{display:none!important;}
+.sticky-wa .wa-icon{width:30px;height:30px;fill:#FFFFFF;stroke:none;}
+.sticky-wa{right:18px;bottom:18px;}
+.back-top{right:24px;bottom:86px;}
+@media (max-width:859px){.sticky-wa{right:16px;bottom:16px;}.back-top{right:20px;bottom:84px;}}
+@media (max-width:1024px), (hover:none) and (pointer:coarse){header .nav-right{margin-right:2px;}}
+
+/* ===== Logo (PNG, transparent) — header, mobile menu, footer ===== */
+header .logo img{mix-blend-mode:normal;height:50px;width:auto;}
+@media (max-width:1024px), (hover:none) and (pointer:coarse){header .logo img{height:42px;}}
+.mobile-menu-brand img{width:auto;height:52px;object-fit:contain;}
+.foot-logo{display:inline-flex;align-items:center;justify-content:center;background:#FFFFFF;border-radius:12px;padding:12px 18px;margin-bottom:26px;
+  box-shadow:0 12px 30px -16px rgba(0,0,0,.5);transition:transform .3s ease,box-shadow .3s ease;}
+.foot-logo:hover{transform:translateY(-2px);box-shadow:0 16px 34px -14px rgba(212,175,55,.35);}
+.foot-logo img{display:block;height:68px;width:auto;}
+@media (max-width:600px){.foot-logo img{height:58px;}.foot-logo{padding:10px 16px;margin-bottom:22px;}}
+footer>p{margin-top:28px;}

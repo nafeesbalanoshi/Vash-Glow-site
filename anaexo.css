@@ -60,3 +60,22 @@ html:not(.js) .pd2-acc-panel{max-height:none;}
   .product-gallery-thumbnails{margin-top:16px;}
 }
 @media(prefers-reduced-motion:reduce){.pd2-main img,.pd2-acc-panel{transition:none;}.product-gallery-thumbnails button.active{animation:none;}}
+
+/* ===== shared product-page extras (all product pages use this template) ===== */
+.pd2-cta{border:0;cursor:pointer;gap:12px;}
+.pd2-cta .vg-add-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:0 0 20px;}
+.pd2-cta-off{background:#F1F5F9;color:#4B5563;border:1px solid #E5E7EB;cursor:not-allowed;box-shadow:none!important;}
+.pd2-cta-off:hover{background:#F1F5F9;box-shadow:none;}
+.pd2-main img{object-fit:cover;}
+.pd2-steps{margin:0;padding-left:22px;display:grid;gap:10px;}
+.pd2-steps li{font-size:15.5px;line-height:1.8;color:#4B5563;padding-left:4px;}
+.pd2-steps li::marker{color:#D4AF37;font-weight:600;}
+.pd2-skin{margin:18px 0 0;font-size:15px;line-height:1.7;color:#4B5563;}
+.pd2-skin strong{color:#1E293B;font-weight:600;}
+.pd2-panel .pd-faq{margin:0;}
+.pd2-panel .pd-faq details{border-top:1px solid #E5E7EB;padding:6px 0;}
+.pd2-panel .pd-faq details:last-child{border-bottom:1px solid #E5E7EB;}
+.pd2-panel .pd-faq summary{cursor:pointer;padding:14px 4px;font:600 14.5px/1.5 'Inter',sans-serif;color:#1E293B;}
+.pd2-panel .pd-faq p{padding:0 4px 14px;margin:0;font-size:15px;line-height:1.8;color:#4B5563;}
+.pd2-panel .pd-related-grid{margin:0;}
+.pd2-crumb,.pd2-info .pd-crumb{margin-bottom:14px;}
