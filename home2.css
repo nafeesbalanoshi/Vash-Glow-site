@@ -80,7 +80,7 @@
 .bundle-price strong{font:600 22px 'Inter',sans-serif;color:#1E293B;box-shadow:inset 0 -8px 0 rgba(212,175,55,.28);}
 .bundle-cta{display:flex;align-items:center;justify-content:center;min-height:56px;background:#1E293B;color:#FFFFFF;font:600 12px 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;transition:background .3s ease;}
 .bundle-cta:hover{background:#334155;}
-@media(max-width:760px){.bundle-grid{grid-template-columns:1fr;gap:16px;}.bundle-body{padding:20px 20px 18px;}}
+
 
 /* ============ WHY VASH GLOW — trust pillars ============ */
 .trust{background:transparent;border:0;}
@@ -101,3 +101,31 @@
 .philosophy h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-.012em;color:#1E293B;margin:14px 0 28px;}
 .ph-body p{font-size:clamp(15.5px,1.35vw,17.5px);line-height:1.95;color:#4B5563;max-width:62ch;margin:0;}
 @media(max-width:900px){.ph-wrap{grid-template-columns:1fr;gap:24px;}}
+
+/* V28 — 4 bundles: 4-up desktop, 2x2 tablet & mobile, uniform heights */
+.bundle-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:stretch;}
+.bundle-card{height:100%;}
+.bundle-body{padding:20px 20px 18px;}
+.bundle-body h3{font-size:clamp(18px,1.5vw,21px);min-height:2.5em;}
+.bundle-actives{min-height:4.8em;}
+.bundle-body p{font-size:13.5px;line-height:1.7;}
+.bundle-price{flex-wrap:wrap;gap:4px 10px;}
+.bundle-price strong{font-size:20px;}
+.bundle-cta{margin-top:auto;}
+@media(max-width:1099px){.bundle-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}.bundle-body h3{font-size:21px;min-height:0}.bundle-actives{min-height:0}}
+@media(max-width:760px){
+.bundle-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.bundle-card{border-radius:10px;}
+.bundle-media{aspect-ratio:1/1;}
+.bundle-ribbon{top:10px;padding:5px 12px 5px 8px;font-size:8.5px;letter-spacing:.1em;}
+.bundle-body{padding:12px 12px 12px;}
+.bundle-body h3{font-size:14.5px;line-height:1.25;margin:0 0 6px;min-height:3.75em;}
+.bundle-actives{font-size:8.5px;line-height:1.55;letter-spacing:.06em;margin-bottom:8px;min-height:4.65em;}
+.bundle-body p{font-size:11.5px;line-height:1.55;}
+.bundle-price{padding-top:12px;gap:2px 8px;flex-direction:column;align-items:flex-start;}
+.bundle-price s{font-size:11.5px;}
+.bundle-price strong{font-size:16px;box-shadow:inset 0 -6px 0 rgba(212,175,55,.28);}
+.bundle-cta{min-height:44px;font-size:10.5px;letter-spacing:.08em;padding:0 6px;}
+.bundle-cta .vg-add-icon{display:none;}
+}
+@media(max-width:360px){.bundle-grid{gap:10px}.bundle-body{padding:10px}.bundle-body h3{font-size:13.5px}.bundle-cta{font-size:9.5px;letter-spacing:.04em}}
