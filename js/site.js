@@ -64,17 +64,26 @@
       if(plus) plus.addEventListener('click',function(){quantity++;update();});
     });
 
-    /* Share */
-    document.querySelectorAll('.share-btn').forEach(function(button){
+    /* Share (native share sheet, clipboard fallback) */
+    document.querySelectorAll('[data-share]').forEach(function(button){
+      var label=button.querySelector('.pd2-share-label'), status=button.parentNode.querySelector('.pd2-share-status'), timer;
+      function say(msg){ if(status){ status.textContent=msg; } if(label){ var o=label.getAttribute('data-label')||label.textContent; label.setAttribute('data-label',o); label.textContent=msg; clearTimeout(timer); timer=setTimeout(function(){ label.textContent=o; if(status) status.textContent=''; },2200); } }
+      function legacyCopy(text){
+        var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.cssText='position:fixed;top:-1000px;opacity:0';
+        document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,text.length);
+        var ok=false; try{ ok=document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); return ok;
+      }
       button.addEventListener('click',function(){
-        var url=window.location.href, title=document.title;
-        if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}
-        if(navigator.clipboard && navigator.clipboard.writeText){
-          navigator.clipboard.writeText(url).then(function(){
-            var original=button.textContent; button.textContent='Link Copied!';
-            window.setTimeout(function(){button.textContent=original;},1800);
-          }).catch(function(){});
+        var canon=document.querySelector('link[rel="canonical"]');
+        var url=(canon&&canon.href)||window.location.href.split('#')[0];
+        var h1=document.querySelector('h1'); var title=(h1?h1.textContent.trim()+' | ':'')+'Vash Glow';
+        if(navigator.share){
+          navigator.share({title:title,text:h1?h1.textContent.trim()+' — Vash Glow Dermaceuticals':'Vash Glow',url:url}).catch(function(err){ if(err&&err.name==='AbortError') return; });
+          return;
         }
+        if(navigator.clipboard&&window.isSecureContext&&navigator.clipboard.writeText){
+          navigator.clipboard.writeText(url).then(function(){ say('Link copied'); }).catch(function(){ say(legacyCopy(url)?'Link copied':'Copy failed'); });
+        } else { say(legacyCopy(url)?'Link copied':'Copy failed'); }
       });
     });
 
