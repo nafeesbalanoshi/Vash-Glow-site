@@ -1251,3 +1251,17 @@ footer>p{margin-top:36px!important;}
  .sun-spot{grid-template-columns:1fr;gap:12px;padding:14px;}
  .article-toc{padding:18px 18px;}
 }
+
+/* Blog v37: image fixes + formula subheading */
+.sun-spot{grid-template-columns:260px minmax(0,1fr);}
+.sun-spot-media img,.cream-spot-media img{height:auto;}
+.article .cream-spot-sub{margin:18px 0 6px;font-size:17px;}
+@media (max-width:720px){.sun-spot{grid-template-columns:1fr;}}
+
+/* Blog v38: ordered steps */
+.article ol.step-list{padding-left:22px;margin-bottom:18px;}
+.article ol.step-list li{font-size:17px;line-height:1.9;color:var(--ink-soft);max-width:70ch;margin-bottom:4px;}
+.article .sun-spot .btn{width:auto;margin-top:4px;}
+@media (max-width:600px){.article ol.step-list li{font-size:16px;}.article .sun-spot .btn{width:100%;justify-content:center;}}
+
+.cream-spot-media--full img{aspect-ratio:4/3;object-position:50% 50%;}
