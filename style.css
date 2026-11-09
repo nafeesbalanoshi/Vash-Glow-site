@@ -1265,3 +1265,10 @@ footer>p{margin-top:36px!important;}
 @media (max-width:600px){.article ol.step-list li{font-size:16px;}.article .sun-spot .btn{width:100%;justify-content:center;}}
 
 .cream-spot-media--full img{aspect-ratio:4/3;object-position:50% 50%;}
+
+/* v41: parent brand in footer */
+.foot-parent{max-width:1280px;margin:44px auto 0;padding:0 40px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;}
+.foot-parent span{font:500 10.5px 'Inter',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#C9A646;}
+.foot-parent img{display:block;width:132px;height:auto;opacity:.96;}
+.foot-parent + .foot-bottom{margin-top:34px;}
+@media (max-width:600px){.foot-parent{padding:0 20px;margin-top:36px;}.foot-parent img{width:116px;}}
