@@ -124,7 +124,7 @@ Phir poora string `encodeURIComponent()` se URL-encode ho kar direct
 WhatsApp par redirect karta hai:
 
 ```
-https://wa.me/923317070775?text=<Encoded_Message_String>
+https://wa.me/923412647603?text=<Encoded_Message_String>
 ```
 
 ---
@@ -135,7 +135,7 @@ https://wa.me/923317070775?text=<Encoded_Message_String>
 `cart.js` ki pehli lines mein:
 
 ```js
-var WHATSAPP_NUMBER = '923317070775';   // <-- apna number (country code ke saath, no +)
+var WHATSAPP_NUMBER = '923412647603';   // <-- apna number (country code ke saath, no +)
 ```
 
 ### Naya product add karna

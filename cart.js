@@ -12,12 +12,12 @@
   'use strict';
 
   /* -------- configuration -------- */
-  var WHATSAPP_NUMBER = '923317070775';       /* Vash Glow WhatsApp */
+  var WHATSAPP_NUMBER = '923412647603';       /* Vash Glow WhatsApp */
   var STORAGE_KEY     = 'vashglow_cart_v1';
   var CURRENCY        = 'Rs. ';
   /* Google Sheet order log (Apps Script web-app URL). Leave '' to skip the sheet
      and send the order straight to WhatsApp. See ORDER-SETUP.md. */
-  var ORDER_ENDPOINT  = '';
+  var ORDER_ENDPOINT  = 'https://script.google.com/macros/s/AKfycbyJocRMlLHKakGXNr2hBdTF7mXKGN5A0SUh1om0P515VjsHpcn1mLB0Nym3XzatXPM55Q/exec';
 
   /* -------- state (loaded from localStorage) -------- */
   var cart = readStore();
